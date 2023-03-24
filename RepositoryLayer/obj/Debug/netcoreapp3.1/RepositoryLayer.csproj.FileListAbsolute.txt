@@ -1,0 +1,16 @@
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.csproj.AssemblyReference.cache
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.AssemblyInfoInputs.cache
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.AssemblyInfo.cs
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.deps.json
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.runtimeconfig.json
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.runtimeconfig.dev.json
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.dll
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.pdb
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.dll
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.pdb
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.genruntimeconfig.cache
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+D:\AnandRathiNotes\OnlineExaminationPortal\RepositoryLayer\obj\Debug\netcoreapp3.1\RepositoryLayer.csproj.CopyComplete

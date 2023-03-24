@@ -1,0 +1,15 @@
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.deps.json
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.dll
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.AssemblyReference.cache
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.AssemblyInfoInputs.cache
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.AssemblyInfo.cs
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.dll
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.pdb
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\bin\Debug\netcoreapp3.1\CommonLayer.dll
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.dll
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\bin\Debug\netcoreapp3.1\RepositoryLayer.pdb
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\bin\Debug\netcoreapp3.1\CommonLayer.pdb
+D:\AnandRathiNotes\OnlineExaminationPortal\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.csproj.CopyComplete

@@ -1,0 +1,17 @@
+Online Examination
+Student login
+teacher login
+admin login
+
+
+Teacher panel
+-add courses
+-add sujects
+-exams setup
+-add question
+-check student result
+
+
+student login
+-exam
+-result
