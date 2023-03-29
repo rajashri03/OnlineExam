@@ -1,10 +1,13 @@
 ﻿using CommonLayer.Models;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.AppContext;
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -117,6 +120,39 @@ namespace RepositoryLayer.Services
                 throw;
             }
         }
-      
+        public string GotoExam(int subjectid)
+        {
+
+            //var values = context.Exams.FromSqlRaw($"execute gotoexam {subjectid};");
+            //return values.ToString();
+            DateTime dateTime = DateTime.UtcNow;
+            //var query = (from setexams in context.Exams
+            //             where setexams.subjectid == subjectid && setexams.examdate == dateTime.Date
+            //             select new { setexams }).ToList();
+            //if (query != null)
+            //{
+            //    return query;
+            //}
+            //else
+            //{
+            //    return $"Coming Soon!Exam is not started yet";
+            //}
+
+            var result = context.Exams.Where(n => n.subjectid == subjectid).FirstOrDefault();
+            int dateresult = DateTime.Compare(result.examdate, dateTime);
+            if (dateresult==0)
+            {
+                return "you can take";
+            }
+            else if (dateresult < 0)
+            {
+                return $"Sorry!Exam ended.Selected Exam Last Date:{result.examdate} Exam Finished";
+            }
+            else
+            {
+                return $"Coming soon.Selected Exam date:{result.examdate}.and timing is :{result.examstarttime} to {result.endTime} Exam not started yet";
+            }
+                
+        }
     }
 }

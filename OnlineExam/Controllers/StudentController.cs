@@ -120,5 +120,28 @@ namespace OnlineExam.Controllers
                 throw;
             }
         }
+        [HttpGet("GotoExam")]
+        public IActionResult Gotoexam(int subjectid)
+        {
+            try
+            {
+                var reg = this.bl.GotoExam(subjectid);
+                if (reg != null)
+                {
+                   
+                    return this.Ok(new { Success = true, Response = reg });
+                }
+                else
+                {
+
+                    return this.Ok(new { Success = false, message = "unable to add student",Response=reg });
+                }
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

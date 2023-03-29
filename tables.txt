@@ -85,4 +85,6 @@ studentname email result
 
 studentpanel
 retive student course in dashboard
+retrive subjects by course and studentid
+go to exam panel--when we click this button redirect to other page if exam is available then click on take exam otherwise show some msg like exam is on this(1-1-2020) day
 retive exam details

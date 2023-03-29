@@ -2,6 +2,7 @@
 using RepositoryLayer.Entities;
 using RepositoryLayer.Interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -38,6 +39,19 @@ namespace RepositoryLayer.Services
 				throw;
 			}
         }
-        
+        public string GotoExam(int subjectid)
+        {
+
+            try
+            {
+                return studentRL.GotoExam(subjectid);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }
