@@ -1,4 +1,6 @@
-﻿using RepositoryLayer.Interfaces;
+﻿using CommonLayer.Models;
+using RepositoryLayer.Entities;
+using RepositoryLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +14,18 @@ namespace RepositoryLayer.Services
 		{
 			this.studentRL = studentRL;
 		}
+        public Studentmodel StudentRegistation(Studentmodel model)
+		{
+            try
+            {
+                return studentRL.StudentRegistation(model);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public string StudentLogin(string username, string password)
         {
 			try
@@ -24,5 +38,6 @@ namespace RepositoryLayer.Services
 				throw;
 			}
         }
+        
     }
 }

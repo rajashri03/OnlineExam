@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using CommonLayer.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.AppContext;
 using RepositoryLayer.Entities;
@@ -68,19 +69,20 @@ namespace RepositoryLayer.Services
             var key = Encoding.ASCII.GetBytes(Iconfiguration["Jwt:key"]);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("Id", userid.ToString()) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("userId", userid.ToString()) }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
-        public string AddCourse(string coursename)
+        public string AddCourse(string coursename ,long userid)
         {
             try
             {
                 CourseEntity addcourse = new CourseEntity();
                 addcourse.Coursename = coursename;
+                addcourse.userid = userid;
                 this.context.courses.Add(addcourse);
                 int result = this.context.SaveChanges();
                 if (result > 0)
@@ -94,6 +96,91 @@ namespace RepositoryLayer.Services
 
                 throw;
             }
+        }
+        public subjectmodel AddSubject(subjectmodel model, long userid)
+        {
+            try
+            {
+                SubjectEntity addsubjects = new SubjectEntity();
+                addsubjects.Courseid = model.courseid;
+                addsubjects.SubjectName = model.subjectname;
+                addsubjects.userid = userid;
+                this.context.Subjects.Add(addsubjects);
+                int result = this.context.SaveChanges();
+                if (result > 0)
+                {
+                    return model;
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public setExamModel Setexam(setExamModel model)
+        {
+            try
+            {
+                SetExamEntity addsubjects = new SetExamEntity();
+                addsubjects.courseid = model.courseid;
+                addsubjects.subjectid = model.subjectid;
+                addsubjects.examname = model.examname;
+                addsubjects.examdiscription = model.examdiscription;
+                addsubjects.examdate = model.examdate;
+                addsubjects.examDuration = model.examDuration;
+                addsubjects.exampassmarks = model.exampassmarks;
+                addsubjects.examtotalmarks = model.examtotalmarks;
+                addsubjects.examstarttime = model.examstarttime;
+                addsubjects.endTime = model.endTime;
+                addsubjects.totalquestion = model.totalquestion;
+                addsubjects.singleQuestionmarks = model.singleQuestionmarks;
+                this.context.Exams.Add(addsubjects);
+                int result = this.context.SaveChanges();
+                if (result > 0)
+                {
+                    return model;
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        public QuestionModel AddQuestions(QuestionModel QuestionModel, long userid)
+        {
+            try
+            {
+                QuestionEntity addsubjects = new QuestionEntity();
+                addsubjects.Question = QuestionModel.Question;
+                addsubjects.OptionA = QuestionModel.OptionA;
+                addsubjects.OptionB = QuestionModel.OptionB;
+                addsubjects.OptionC = QuestionModel.OptionC;
+                addsubjects.OptionD = QuestionModel.OptionD;
+                addsubjects.CorrectAnswer = QuestionModel.CorrectAnwer;
+                addsubjects.courseid = QuestionModel.courseid;
+                addsubjects.userid = userid;
+                this.context.Questions.Add(addsubjects);
+                int result = this.context.SaveChanges();
+                if (result > 0)
+                {
+                    return QuestionModel;
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public IEnumerable<CourseEntity> GetAllCourse()
+        {
+            return context.courses.ToList();
         }
     }
 }

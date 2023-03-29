@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using CommonLayer.Models;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RepositoryLayer.AppContext;
 using RepositoryLayer.Entities;
@@ -25,10 +26,10 @@ namespace RepositoryLayer.Services
         {
             try
             {
-                UserEntity user = new UserEntity();
-                user = this.context.Users.FirstOrDefault(x => x.Email == username &&x.userType=="Student");
+                StudentEntity user = new StudentEntity();
+                user = this.context.StudentInfo.FirstOrDefault(x => x.Email == username &&x.userType=="Student");
                 string dPass = Decrpt(user.Password);
-                var id = user.userId;
+                var id = user.studentid;
                 if (dPass == password && user != null)
                 {
                     var token = this.TokenByID(id);
@@ -68,12 +69,54 @@ namespace RepositoryLayer.Services
             var key = Encoding.ASCII.GetBytes(Iconfiguration["Jwt:key"]);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { new Claim("Id", userid.ToString()) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("studentid", userid.ToString()) }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+        public Studentmodel StudentRegistation(Studentmodel user)
+        {
+            try
+            {
+                StudentEntity users = new StudentEntity();
+                users.FirstName = user.FirstName;
+                users.LastName = user.LastName;
+                users.Email = user.Email;
+                users.Password = EncryptPass(user.Password);
+                users.userType = user.userType;
+                users.courseid = user.courseid;
+                this.context.StudentInfo.Add(users);
+                int result = this.context.SaveChanges();
+                if (result > 0)
+                {
+                    return user;
+                }
+                return null;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public string EncryptPass(string password)
+        {
+            try
+            {
+                string msg = "";
+                byte[] encode = new byte[password.Length];
+                encode = Encoding.UTF8.GetBytes(password);
+                msg = Convert.ToBase64String(encode);
+                return msg;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+      
     }
 }

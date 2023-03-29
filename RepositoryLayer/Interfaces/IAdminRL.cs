@@ -9,5 +9,6 @@ namespace RepositoryLayer.Interfaces
     {
         public UsersModel Registration(UsersModel user);
         public string AdminLogin(string username, string password);
+
     }
 }

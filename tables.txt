@@ -1,0 +1,88 @@
+Registration
+ 	public long userId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string userType { get; set; }
+
+Login
+
+Email
+Password
+
+ExamSetup----
+	AddCourse
+
+	Courseid
+	Coursename
+	addedbywhome
+
+
+
+	Subject--
+	subjectid
+	courseid
+	subjectname
+	addedbywhome
+
+	Set Exam---
+	courseid-means coursename(dropdown)
+	subjectid-(dropdown)
+	examname
+	exam discription-
+	examdate
+	examduration(minutes)
+	exampassmarks
+	exam total marks
+	examstart time
+	exam end time
+	total no. question
+	a single question marks
+
+Question
+Addquestion
+
+	Question
+	option A -
+	option B -
+	option C -
+	option D -
+correct answer
+
+
+
+Result-(getresult)
+retive all results
+
+username   examname  examdate totalquestion   result totalmarks  yourscore
+
+
+
+studentlist
+retive student details
+
+
+studentname email result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+studentpanel
+retive student course in dashboard
+retive exam details

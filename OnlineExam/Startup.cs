@@ -34,8 +34,7 @@ namespace OnlineExam
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<Context>(options =>
-options.UseNpgsql(Configuration.GetConnectionString("Onlinexam")));
+            services.AddDbContext<Context>(opts => opts.UseSqlServer(Configuration["ConnectionString:OnlineExam"]));
             services.AddTransient<IAdminRL, AdminRL>();
             services.AddTransient<IAdminBL, AdminBL>();
             services.AddTransient<IStudentRL, StudentRL>();

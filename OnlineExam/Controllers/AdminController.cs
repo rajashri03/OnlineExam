@@ -5,7 +5,7 @@ using RepositoryLayer.Interfaces;
 
 namespace OnlineExam.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/")]
     [ApiController]
     public class AdminController : ControllerBase
     {

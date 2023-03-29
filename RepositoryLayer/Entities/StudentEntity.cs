@@ -10,12 +10,14 @@ namespace RepositoryLayer.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
-        public string classname { get; set; }
-        public string Course { get; set; }
-        public string Address { get; set; }
-        [ForeignKey("Users")]
-        public long userId { get; set; }
-        public virtual UserEntity user { get; set; }
+        public int studentid { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public string userType { get; set; }
+        [ForeignKey("courses")]
+        public int courseid { get; set; }
+        public virtual CourseEntity courses { get; set; }
     }
 }

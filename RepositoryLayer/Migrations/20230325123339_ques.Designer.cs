@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RepositoryLayer.AppContext;
 
 namespace RepositoryLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230325123339_ques")]
+    partial class ques
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,15 +66,10 @@ namespace RepositoryLayer.Migrations
                     b.Property<string>("Question")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("courseid")
-                        .HasColumnType("int");
-
                     b.Property<long>("userid")
                         .HasColumnType("bigint");
 
                     b.HasKey("QuestionId");
-
-                    b.HasIndex("courseid");
 
                     b.HasIndex("userid");
 
@@ -133,15 +130,11 @@ namespace RepositoryLayer.Migrations
 
             modelBuilder.Entity("RepositoryLayer.Entities.StudentEntity", b =>
                 {
-                    b.Property<int>("studentid")
+                    b.Property<string>("FirstName")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
@@ -156,7 +149,7 @@ namespace RepositoryLayer.Migrations
                     b.Property<string>("userType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("studentid");
+                    b.HasKey("FirstName");
 
                     b.HasIndex("courseid");
 
@@ -224,12 +217,6 @@ namespace RepositoryLayer.Migrations
 
             modelBuilder.Entity("RepositoryLayer.Entities.QuestionEntity", b =>
                 {
-                    b.HasOne("RepositoryLayer.Entities.CourseEntity", "courses")
-                        .WithMany()
-                        .HasForeignKey("courseid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("RepositoryLayer.Entities.UserEntity", "user")
                         .WithMany()
                         .HasForeignKey("userid")
